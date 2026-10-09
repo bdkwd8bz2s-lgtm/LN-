@@ -1,1 +1,183 @@
+<!DOCTYPE html>
 
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>LN</title>
+
+<style>
+
+* { box-sizing: border-box; }
+
+html, body {
+
+  margin: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  overflow: hidden;
+
+  background: #05060a;
+
+}
+
+body {
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: #f5f2f4;
+
+  font-family: monospace;
+
+}
+
+.scene {
+
+  position: relative;
+
+  width: 100%;
+
+  height: 180px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+}
+
+.person {
+
+  position: absolute;
+
+  top: 50%;
+
+  font-size: clamp(22px, 5vw, 36px);
+
+  line-height: 1.12;
+
+  white-space: pre;
+
+  text-align: center;
+
+  transform: translateY(-50%);
+
+  animation: dance 4.2s ease-in-out infinite;
+
+}
+
+.left { left: calc(50% - 76px); }
+
+.right {
+
+  right: calc(50% - 76px);
+
+  animation-name: danceRight;
+
+}
+
+.heart {
+
+  position: absolute;
+
+  top: 50%;
+
+  left: 50%;
+
+  color: #ff668f;
+
+  font-size: 24px;
+
+  transform: translate(-50%, -50%);
+
+  animation: pulse 4.2s ease-in-out infinite;
+
+}
+
+@keyframes dance {
+
+  0%, 12%, 88%, 100% { translate: 0 0; }
+
+  20%, 32% { translate: -5px -8px; }
+
+  26%, 38% { translate: 4px 4px; }
+
+  48%, 55% { translate: -22vw -3px; }
+
+  68% { translate: -22vw 0; }
+
+  76% { translate: -8px -6px; }
+
+}
+
+@keyframes danceRight {
+
+  0%, 12%, 88%, 100% { translate: 0 0; }
+
+  20%, 32% { translate: 5px -8px; }
+
+  26%, 38% { translate: -4px 4px; }
+
+  48%, 55% { translate: 22vw -3px; }
+
+  68% { translate: 22vw 0; }
+
+  76% { translate: 8px -6px; }
+
+}
+
+@keyframes pulse {
+
+  0%, 12%, 88%, 100% {
+
+    transform: translate(-50%, -50%) scale(1);
+
+  }
+
+  48%, 68% {
+
+    transform: translate(-50%, -50%) scale(3.8);
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="scene">
+
+  <div class="person left"> o
+
+/|\
+
+/ \</div>
+
+  <div class="heart">♡</div>
+
+  <div class="person right">o
+
+/|\
+
+/ \</div>
+
+</div>
+
+</body>
+
+</html>
